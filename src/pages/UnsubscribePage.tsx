@@ -65,7 +65,7 @@ const UnsubscribePage = () => {
               <p>{message.text}</p>
               {message.type === 'success' && (
                 <p className="mt-4">
-                  Return to <a href={import.meta.env.VITE_COMPANY_WEBSITE} className="text-green-600 hover:underline">Grace Mobility</a>.
+                  Return to <a href="https://gracemobility.in" className="text-green-600 hover:underline">Grace Mobility</a>.
                 </p>
               )}
             </motion.div>

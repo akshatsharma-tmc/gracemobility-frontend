@@ -16,7 +16,7 @@ const HomePage = () => {
     {
       icon: <Zap className="h-8 w-8 text-green-600" />,
       title: 'Advanced Technology',
-      description: 'Cutting-edge sensors and AI-powered navigation systems for enhanced mobility and safety.'
+      description: 'Cutting-edge sensors with technology and AI-powered navigation systems for enhanced mobility and safety.'
     },
     {
       icon: <Shield className="h-8 w-8 text-green-600" />,

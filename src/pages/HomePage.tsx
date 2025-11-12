@@ -16,17 +16,20 @@ const HomePage = () => {
     {
       icon: <Zap className="h-8 w-8 text-green-600" />,
       title: 'Advanced Technology',
-      description: 'Cutting-edge sensors with technology and AI-powered navigation systems for enhanced mobility and safety.'
+      description:
+        'Cutting-edge sensors and AI-powered navigation systems for enhanced mobility and safety.'
     },
     {
       icon: <Shield className="h-8 w-8 text-green-600" />,
       title: 'Safety First',
-      description: 'Object detection and collision avoidance systems to ensure user safety in any environment.'
+      description:
+        'Object detection and collision avoidance systems to ensure user safety in any environment.'
     },
     {
       icon: <Users className="h-8 w-8 text-green-600" />,
       title: 'User-Centered Design',
-      description: 'Every product is designed with real user needs and accessibility standards in mind.'
+      description:
+        'Every product is designed with real user needs and accessibility standards in mind.'
     }
   ];
 
@@ -34,20 +37,22 @@ const HomePage = () => {
     {
       name: 'Sarah Johnson',
       role: 'Beta Tester',
-      content: 'The autonomous navigation feature has given me independence I never thought possible. Grace.ev is truly changing lives.',
+      content:
+        'The autonomous navigation feature has given me independence I never thought possible. Grace.ev is truly changing lives.',
       rating: 5
     },
     {
       name: 'Dr. Michael Chen',
       role: 'Rehabilitation Specialist',
-      content: 'As a healthcare professional, I\'m impressed by the thoughtful engineering and safety features. This is the future of mobility assistance.',
+      content:
+        'As a healthcare professional, I\'m impressed by the thoughtful engineering and safety features. This is the future of mobility assistance.',
       rating: 5
     }
   ];
 
   return (
     <div>
-      {/* Hero Section with Parallax */}
+      {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
       <motion.section
         className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 min-h-screen flex items-center transition-colors duration-300 relative overflow-hidden"
         style={{ y: parallaxY }}
@@ -65,11 +70,12 @@ const HomePage = () => {
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
                 Empowering
-                <span className="text-green-600 dark:text-green-400"> Independence</span> Through Innovation
+                <span className="text-green-600 dark:text-green-400"> Independence</span> Through
+                Innovation
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Grace.ev creates advanced assistive technology to support people with mobility challenges,
-                helping them live more independent and fulfilling lives.
+                Grace.ev creates advanced assistive technology to support people with mobility
+                challenges, helping them live more independent and fulfilling lives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -86,6 +92,7 @@ const HomePage = () => {
                 </Link>
               </div>
             </motion.div>
+
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
@@ -93,18 +100,25 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 transition-colors duration-300 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Innovation in Progress</h3>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  Innovation in Progress
+                </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-6">
                   We're developing revolutionary assistive technology that will transform lives.
-                  Our team is working tirelessly to bring you products that enhance independence and mobility.
+                  Our team is working tirelessly to bring you products that enhance independence
+                  and mobility.
                 </p>
                 <motion.div
                   className="bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <p className="text-green-800 dark:text-green-300 font-semibold">Coming Soon</p>
-                  <p className="text-green-700 dark:text-green-400 text-sm mt-1">Stay tuned for exciting updates!</p>
+                  <p className="text-green-800 dark:text-green-300 font-semibold">
+                    Coming Soon
+                  </p>
+                  <p className="text-green-700 dark:text-green-400 text-sm mt-1">
+                    Stay tuned for exciting updates!
+                  </p>
                 </motion.div>
               </div>
             </motion.div>
@@ -112,7 +126,7 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* Features Section with Fade-In */}
+      {/* ────────────────────────────────────── FEATURES ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -126,8 +140,8 @@ const HomePage = () => {
               Why Choose Grace.ev?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We combine cutting-edge technology with compassionate design to create
-              mobility solutions that truly make a difference.
+              We combine cutting-edge technology with compassionate design to create mobility
+              solutions that truly make a difference.
             </p>
           </motion.div>
 
@@ -142,7 +156,9 @@ const HomePage = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  {feature.title}
+                </h3>
                 <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
               </motion.div>
             ))}
@@ -150,7 +166,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Product Showcase with Slide-In */}
+      {/* ────────────────────────────────────── PRODUCT SHOWCASE ────────────────────────────────────── */}
       <motion.section
         className="py-20 bg-gradient-to-br from-green-900 to-green-800 dark:from-green-950 dark:to-green-900 text-white transition-colors duration-300"
         initial={{ opacity: 0 }}
@@ -174,7 +190,12 @@ const HomePage = () => {
                 object detection, and intelligent navigation systems.
               </p>
               <ul className="space-y-3 mb-8">
-                {['360° obstacle detection', 'Autonomous navigation', 'Voice control integration', 'Emergency assistance features'].map((item, index) => (
+                {[
+                  '360° obstacle detection',
+                  'Autonomous navigation',
+                  'Voice control integration',
+                  'Emergency assistance features'
+                ].map((item, index) => (
                   <motion.li
                     key={index}
                     className="flex items-center space-x-3"
@@ -196,6 +217,7 @@ const HomePage = () => {
                 <ArrowRight size={18} />
               </Link>
             </motion.div>
+
             <motion.div
               className="bg-white/10 dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 relative overflow-hidden"
               initial={{ opacity: 0, x: 50 }}
@@ -203,14 +225,11 @@ const HomePage = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {/* Background Image */}
               <img
                 src="/Blurred Wheelchair.png"
                 alt="Wheelchair"
                 className="absolute inset-0 w-full h-full object-cover opacity-20 blur-md"
               />
-
-              {/* Content Overlay */}
               <div className="relative bg-white/70 dark:bg-gray-800/70 rounded-xl p-6 text-center backdrop-blur-sm">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                   Advanced Wheelchair
@@ -218,12 +237,11 @@ const HomePage = () => {
                 <p className="text-gray-600 dark:text-gray-300 mt-2">Coming Soon</p>
               </div>
             </motion.div>
-
-
           </div>
         </div>
       </motion.section>
-      {/* CTA Section with Scale Animation */}
+
+      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
       <motion.section
         className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
         initial={{ opacity: 0, scale: 0.95 }}
@@ -248,19 +266,63 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Join our community and be the first to know about our latest innovations
-            and product launches.
+            Join our community and be the first to know about our latest innovations and
+            product launches.
           </motion.p>
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
             <Link
               to="/about"
               className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
             >
               <span>Get in Touch</span>
               <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ──────────────────────── NEW: WE ARE HIRING SECTION ──────────────────────── */}
+      <motion.section
+        className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 text-white"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="text-4xl lg:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            WE ARE HIRING
+          </motion.h2>
+
+          <motion.p
+            className="text-xl lg:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Our projects combine mechanical innovation, smart control systems, and
+            human-centered design to redefine what mobility assistance can achieve. We are a
+            mission-driven team looking for like-minded passionate Mechanical engineers and
+            designers to join us and innovate for India.
+          </motion.p>
+
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="/careers"
+              className="inline-flex items-center space-x-2 bg-white text-indigo-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg"
+            >
+              <span>Know More</span>
+              <ArrowRight size={20} />
             </Link>
           </motion.div>
         </div>

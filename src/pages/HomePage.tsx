@@ -281,47 +281,45 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* ──────────────────────── NEW: WE ARE HIRING SECTION ──────────────────────── */}
+      {/* ──────────────────────── WE ARE HIRING SECTION ──────────────────────── */}
       <motion.section
-        className="py-20 bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-800 dark:to-purple-800 text-white"
-        initial={{ opacity: 0, y: 30 }}
+        className="py-20 bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl lg:text-5xl font-bold text-green-800 dark:text-green-300 mb-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
           >
             WE ARE HIRING
           </motion.h2>
 
           <motion.p
-            className="text-xl lg:text-2xl mb-10 max-w-4xl mx-auto leading-relaxed"
+            className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
           >
-            Our projects combine mechanical innovation, smart control systems, and
-            human-centered design to redefine what mobility assistance can achieve. We are a
-            mission-driven team looking for like-minded passionate Mechanical engineers and
-            designers to join us and innovate for India.
+            Our projects combine mechanical innovation, smart control systems, and human-centered design to redefine what mobility assistance can achieve. We are a mission-driven team looking for like-minded passionate <strong>Mechanical Engineers</strong> and <strong>Industrial Designers</strong> to join us and innovate for India.
           </motion.p>
 
           <motion.div
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.3 }}
           >
             <Link
               to="/careers"
-              className="inline-flex items-center space-x-2 bg-white text-indigo-700 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold text-lg"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold text-lg shadow-lg"
             >
-              <span>Know More</span>
+              <span>Explore Open Roles</span>
               <ArrowRight size={20} />
             </Link>
           </motion.div>

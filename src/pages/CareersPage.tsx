@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { MapPin, Clock, Users, Heart, Zap, Award } from 'lucide-react';
+import { MapPin, Clock, Users, Heart, Zap, Award, Mail } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const CareersPage = () => {
   const { scrollY } = useScroll();
@@ -10,6 +11,7 @@ const CareersPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   const benefits = [
     {
       icon: <Heart className="h-8 w-8 text-green-600" />,
@@ -44,7 +46,7 @@ const CareersPage = () => {
 
   return (
     <div>
-      {/* Hero Section with Parallax */}
+      {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
       <motion.section
         className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 py-20 transition-colors duration-300 relative overflow-hidden"
         style={{ y: parallaxY }}
@@ -78,7 +80,7 @@ const CareersPage = () => {
                 <div className="text-gray-600 dark:text-gray-300">Team Members</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-green-600">0</div>
+                <div className="text-3xl font-bold text-green-600">2</div>
                 <div className="text-gray-600 dark:text-gray-300">Open Positions</div>
               </div>
               <div>
@@ -90,7 +92,7 @@ const CareersPage = () => {
         </div>
       </motion.section>
 
-      {/* Culture & Values with Slide-In */}
+      {/* ────────────────────────────────────── CULTURE & VALUES ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -152,7 +154,7 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* Benefits with Staggered Fade-In */}
+      {/* ────────────────────────────────────── BENEFITS ────────────────────────────────────── */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -188,7 +190,7 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* Job Openings with Fade-In */}
+      {/* ────────────────────────────────────── JOB OPENINGS ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -204,6 +206,80 @@ const CareersPage = () => {
             </p>
           </motion.div>
 
+          {/* ──────── JOB 1: MECHANICAL ENGINEER ──────── */}
+          <motion.div
+            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg mb-8"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
+              Mechanical Engineer
+            </h3>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Passionate about mobility, mechatronics, and product design
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Strong interest in mechanism design, motion systems, CAD modelling, or prototyping
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Proficiency in CAD tools (SolidWorks, Fusion 360, or similar) is preferred
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Eagerness to test, iterate, and learn through real-world builds
+              </li>
+            </ul>
+            <a
+              href="mailto:info@gracemobility.in?subject=Application: Mechanical Engineer"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
+            >
+              <Mail size={18} />
+              <span>Send Your Resume</span>
+            </a>
+          </motion.div>
+
+          {/* ──────── JOB 2: INDUSTRIAL DESIGNER ──────── */}
+          <motion.div
+            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
+              Industrial Designer
+            </h3>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Passionate about inclusive design and improving quality of life
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Fan of minimalist design
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Review existing literature and conduct on-site field studies to understand user needs, caregiver ergonomics, and safety challenges
+              </li>
+            </ul>
+            <a
+              href="mailto:info@gracemobility.in?subject=Application: Industrial Designer"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
+            >
+              <Mail size={18} />
+              <span>Send Your Resume</span>
+            </a>
+          </motion.div>
+
+          {/* ──────── COMMENTED OUT: NO OPEN POSITIONS ──────── */}
+          {/*
           <motion.div
             className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center"
             initial={{ opacity: 0, y: 20 }}
@@ -218,6 +294,7 @@ const CareersPage = () => {
               We're not hiring at the moment, but we’re always on the lookout for passionate individuals to join our mission. Check back later for new opportunities, or send your resume to <span className="font-medium">info@gracemobility.in</span> to be considered for future roles.
             </p>
           </motion.div>
+          */}
         </div>
       </section>
     </div>

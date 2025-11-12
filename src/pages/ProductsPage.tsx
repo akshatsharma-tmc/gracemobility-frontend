@@ -45,6 +45,40 @@ const ProductsPage = () => {
         'Weather resistant'
       ],
       description: 'Our flagship autonomous wheelchair featuring advanced AI navigation, comprehensive safety systems, and intuitive controls designed for maximum independence.'
+    },
+    {
+      id: 2,
+      name: 'Wheelchair Assist Systems',
+      category: 'Retrofit Motorization Kit',
+      price: '',
+      status: 'Coming Soon',
+      image: '/Incline.png',
+      features: [
+        'Affordable motorization',
+        'Easy retrofit installation',
+        'Smart power assist',
+        'Lightweight & compact',
+        'Battery powered',
+        'Indoor/outdoor use'
+      ],
+      description: 'We are developing retrofit kits for manual wheelchairs to provide affordable motorized assistance, making mobility accessible to more users without replacing their existing chair.'
+    },
+    {
+      id: 3,
+      name: 'Steps',
+      category: 'Terrain Navigation Module',
+      price: '',
+      status: 'Coming Soon',
+      image: '/Steps.png',
+      features: [
+        'Step & pothole traversal',
+        'Compact climbing mechanism',
+        'Stable balance control',
+        'Lightweight design',
+        'Quick attach/detach',
+        'Safe descent control'
+      ],
+      description: 'With steps and potholes dominating pathways, our innovation enables wheelchairs to navigate small obstacles from doorstep to gate — without looking like a tank. Just-right mobility for real-world India.'
     }
   ];
 
@@ -87,7 +121,6 @@ const ProductsPage = () => {
       if (result.success) {
         setEmail('');
         setName('');
-        // Keep modal open to show success message
       }
     } catch (err) {
       setSubscriptionMessage({ text: 'Failed to subscribe. Please try again.', type: 'error' });
@@ -98,7 +131,7 @@ const ProductsPage = () => {
 
   return (
     <div>
-      {/* Hero Section with Parallax */}
+      {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
       <motion.section
         className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 py-20 transition-colors duration-300 relative overflow-hidden"
         style={{ y: parallaxY }}
@@ -135,7 +168,7 @@ const ProductsPage = () => {
         </div>
       </motion.section>
 
-      {/* Products Grid with Staggered Fade-In */}
+      {/* ────────────────────────────────────── PRODUCTS GRID ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -189,14 +222,14 @@ const ProductsPage = () => {
                   <div className="mb-6">
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Key Features:</h4>
                     <div className="grid grid-cols-2 gap-2">
-                      {product.features.map((feature, index) => (
+                      {product.features.map((feature, idx) => (
                         <motion.div
-                          key={index}
+                          key={idx}
                           className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300"
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
-                          transition={{ duration: 0.4, delay: index * 0.1 }}
+                          transition={{ duration: 0.4, delay: idx * 0.1 }}
                         >
                           <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                           <span>{feature}</span>
@@ -218,7 +251,7 @@ const ProductsPage = () => {
         </div>
       </section>
 
-      {/* Technology Features with Staggered Slide-In */}
+      {/* ────────────────────────────────────── TECHNOLOGY STACK ────────────────────────────────────── */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -279,7 +312,7 @@ const ProductsPage = () => {
         </div>
       </section>
 
-      {/* CTA Section with Scale Animation */}
+      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
       <motion.section
         className="py-20 bg-green-600 dark:bg-green-700 text-white transition-colors duration-300"
         initial={{ opacity: 0, scale: 0.95 }}
@@ -325,7 +358,7 @@ const ProductsPage = () => {
         </div>
       </motion.section>
 
-      {/* Subscription Modal */}
+      {/* ────────────────────────────────────── SUBSCRIPTION MODAL ────────────────────────────────────── */}
       {showSubscriptionModal && (
         <motion.div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"

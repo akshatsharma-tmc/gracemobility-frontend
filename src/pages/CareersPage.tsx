@@ -12,29 +12,6 @@ const CareersPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const benefits = [
-    {
-      icon: <Heart className="h-8 w-8 text-green-600" />,
-      title: 'Health & Wellness',
-      description: 'Comprehensive medical, dental, and vision coverage plus wellness programs'
-    },
-    {
-      icon: <Zap className="h-8 w-8 text-green-600" />,
-      title: 'Growth & Learning',
-      description: 'Professional development budget, conference attendance, and internal training'
-    },
-    {
-      icon: <Users className="h-8 w-8 text-green-600" />,
-      title: 'Work-Life Balance',
-      description: 'Flexible hours, remote work options, and generous PTO policy'
-    },
-    {
-      icon: <Award className="h-8 w-8 text-green-600" />,
-      title: 'Equity & Rewards',
-      description: 'Competitive salary, equity participation, and performance bonuses'
-    }
-  ];
-
   const values = [
     'Empathy-driven innovation',
     'User-centered design thinking',
@@ -46,7 +23,7 @@ const CareersPage = () => {
 
   return (
     <div>
-      {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
+      {/* ────────────────────────────────────── HERO: JOIN OUR MISSION ────────────────────────────────────── */}
       <motion.section
         className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 py-20 transition-colors duration-300 relative overflow-hidden"
         style={{ y: parallaxY }}
@@ -69,6 +46,9 @@ const CareersPage = () => {
               Help us build the future of assistive technology. Join a team of passionate
               individuals dedicated to improving lives through innovation.
             </p>
+
+            {/* REMOVED: Team stats (10+, 2, 4.8/5) */}
+            {/*
             <motion.div
               className="flex justify-center space-x-8 text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -88,11 +68,102 @@ const CareersPage = () => {
                 <div className="text-gray-600 dark:text-gray-300">Employee Rating</div>
               </div>
             </motion.div>
+            */}
           </motion.div>
         </div>
       </motion.section>
 
-      {/* ────────────────────────────────────── CULTURE & VALUES ────────────────────────────────────── */}
+      {/* ────────────────────────────────────── OPEN POSITIONS (MOVED UP) ────────────────────────────────────── */}
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Open Positions</h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Find your next opportunity to make a meaningful impact.
+            </p>
+          </motion.div>
+
+          {/* JOB 1: MECHANICAL ENGINEER */}
+          <motion.div
+            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg mb-8"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
+              Mechanical Engineer
+            </h3>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Passionate about mobility, mechatronics, and product design
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Strong interest in mechanism design, motion systems, CAD modelling, or prototyping
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Proficiency in CAD tools (SolidWorks, Fusion 360, or similar) is preferred
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Eagerness to test, iterate, and learn through real-world builds
+              </li>
+            </ul>
+            <a
+              href="mailto:info@gracemobility.in?subject=Application: Mechanical Engineer"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
+            >
+              <Mail size={18} />
+              <span>Send Your Resume</span>
+            </a>
+          </motion.div>
+
+          {/* JOB 2: INDUSTRIAL DESIGNER */}
+          <motion.div
+            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
+              Industrial Designer
+            </h3>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Passionate about inclusive design and improving quality of life
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Fan of minimalist design
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-600 mr-2">•</span>
+                Review existing literature and conduct on-site field studies to understand user needs, caregiver ergonomics, and safety challenges
+              </li>
+            </ul>
+            <a
+              href="mailto:info@gracemobility.in?subject=Application: Industrial Designer"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
+            >
+              <Mail size={18} />
+              <span>Send Your Resume</span>
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ────────────────────────────────────── WHY GRACE.EV? (KEPT) ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -154,7 +225,8 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* ────────────────────────────────────── BENEFITS ────────────────────────────────────── */}
+      {/* ────────────────────────────────────── BENEFITS & PERKS (COMMENTED OUT) ────────────────────────────────────── */}
+      {/*
       <section className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -189,114 +261,7 @@ const CareersPage = () => {
           </div>
         </div>
       </section>
-
-      {/* ────────────────────────────────────── JOB OPENINGS ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">Open Positions</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Find your next opportunity to make a meaningful impact.
-            </p>
-          </motion.div>
-
-          {/* ──────── JOB 1: MECHANICAL ENGINEER ──────── */}
-          <motion.div
-            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg mb-8"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
-              Mechanical Engineer
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Passionate about mobility, mechatronics, and product design
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Strong interest in mechanism design, motion systems, CAD modelling, or prototyping
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Proficiency in CAD tools (SolidWorks, Fusion 360, or similar) is preferred
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Eagerness to test, iterate, and learn through real-world builds
-              </li>
-            </ul>
-            <a
-              href="mailto:info@gracemobility.in?subject=Application: Mechanical Engineer"
-              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
-            >
-              <Mail size={18} />
-              <span>Send Your Resume</span>
-            </a>
-          </motion.div>
-
-          {/* ──────── JOB 2: INDUSTRIAL DESIGNER ──────── */}
-          <motion.div
-            className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-4">
-              Industrial Designer
-            </h3>
-            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Passionate about inclusive design and improving quality of life
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Fan of minimalist design
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">•</span>
-                Review existing literature and conduct on-site field studies to understand user needs, caregiver ergonomics, and safety challenges
-              </li>
-            </ul>
-            <a
-              href="mailto:info@gracemobility.in?subject=Application: Industrial Designer"
-              className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-all duration-300 font-medium"
-            >
-              <Mail size={18} />
-              <span>Send Your Resume</span>
-            </a>
-          </motion.div>
-
-          {/* ──────── COMMENTED OUT: NO OPEN POSITIONS ──────── */}
-          {/*
-          <motion.div
-            className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-              No Open Positions Currently
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              We're not hiring at the moment, but we’re always on the lookout for passionate individuals to join our mission. Check back later for new opportunities, or send your resume to <span className="font-medium">info@gracemobility.in</span> to be considered for future roles.
-            </p>
-          </motion.div>
-          */}
-        </div>
-      </section>
+      */}
     </div>
   );
 };

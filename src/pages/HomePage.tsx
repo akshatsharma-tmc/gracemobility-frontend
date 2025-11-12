@@ -33,23 +33,6 @@ const HomePage = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Beta Tester',
-      content:
-        'The autonomous navigation feature has given me independence I never thought possible. Grace.ev is truly changing lives.',
-      rating: 5
-    },
-    {
-      name: 'Dr. Michael Chen',
-      role: 'Rehabilitation Specialist',
-      content:
-        'As a healthcare professional, I\'m impressed by the thoughtful engineering and safety features. This is the future of mobility assistance.',
-      rating: 5
-    }
-  ];
-
   return (
     <div>
       {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
@@ -241,47 +224,7 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
-      <motion.section
-        className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl lg:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Ready to Experience the Future of Mobility?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-green-100 dark:text-green-200 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Join our community and be the first to know about our latest innovations and
-            product launches.
-          </motion.p>
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-            <Link
-              to="/about"
-              className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
-            >
-              <span>Get in Touch</span>
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* ──────────────────────── WE ARE HIRING SECTION ──────────────────────── */}
+      {/* ──────────────────────── WE ARE HIRING SECTION (MOVED HERE) ──────────────────────── */}
       <motion.section
         className="py-20 bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300"
         initial={{ opacity: 0, y: 40 }}
@@ -325,6 +268,134 @@ const HomePage = () => {
           </motion.div>
         </div>
       </motion.section>
+
+      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
+      <motion.section
+        className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="text-3xl lg:text-4xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Ready to Experience the Future of Mobility?
+          </motion.h2>
+          <motion.p
+            className="text-xl text-green-100 dark:text-green-200 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Join our community and be the first to know about our latest innovations and
+            product launches.
+          </motion.p>
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+            <Link
+              to="/about"
+              className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
+            >
+              <span>Get in Touch</span>
+              <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ────────────────────────────────────── PARTNERS (LAST SECTION) ────────────────────────────────────── */}
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Our Partners
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We collaborate with leading institutions and organizations to drive innovation in assistive technology.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Partner 1: St Johns */}
+            <motion.div
+              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src="/St Johns logo.png"
+                alt="St Johns Research Institute"
+                className="w-32 h-32 mx-auto mb-6 object-contain rounded-lg"
+              />
+              <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
+                St Johns Research Institute
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                A premier research institute in Bengaluru, collaborating with us on clinical validation, user studies, and medical-grade safety standards for assistive devices.
+              </p>
+            </motion.div>
+
+            {/* Partner 2: Takumi Motion Controls */}
+            <motion.div
+              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src="/Takumi-Motion-Controls-Logo.png"
+                alt="Takumi Motion Controls"
+                className="w-32 h-32 mx-auto mb-6 object-contain rounded-lg"
+              />
+              <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
+                Takumi Motion Controls
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                Our technology partner for precision motors, embedded systems, and motion control algorithms — enabling smooth, reliable, and efficient mobility solutions.
+              </p>
+            </motion.div>
+
+            {/* Partner 3: Enable India */}
+            <motion.div
+              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <img
+                src="/EnableIndia.png"
+                alt="Enable India"
+                className="w-32 h-32 mx-auto mb-6 object-contain rounded-lg"
+              />
+              <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
+                Enable India
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                A pioneer in disability inclusion and the Purple Economy — guiding our design philosophy to ensure our products are accessible, inclusive, and empowering.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

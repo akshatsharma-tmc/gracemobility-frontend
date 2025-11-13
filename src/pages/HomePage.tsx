@@ -109,48 +109,9 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* ────────────────────────────────────── FEATURES ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Why Choose Grace.ev?
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We combine cutting-edge technology with compassionate design to create mobility
-              solutions that truly make a difference.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-              >
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      
       {/* ────────────────────────────────────── PRODUCT SHOWCASE ────────────────────────────────────── */}
-      <motion.section
+      {/* <motion.section
         className="py-20 bg-gradient-to-br from-green-900 to-green-800 dark:from-green-950 dark:to-green-900 text-white transition-colors duration-300"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -222,93 +183,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </motion.section>
-
-      {/* ──────────────────────── WE ARE HIRING SECTION (MOVED HERE) ──────────────────────── */}
-      <motion.section
-        className="py-20 bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-green-800 dark:text-green-300 mb-6"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            WE ARE HIRING
-          </motion.h2>
-
-          <motion.p
-            className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            Our projects combine mechanical innovation, smart control systems, and human-centered design to redefine what mobility assistance can achieve. We are a mission-driven team looking for like-minded passionate <strong>Mechanical Engineers</strong> and <strong>Industrial Designers</strong> to join us and innovate for India.
-          </motion.p>
-
-          <motion.div
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.3 }}
-          >
-            <Link
-              to="/careers"
-              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold text-lg shadow-lg"
-            >
-              <span>Explore Open Roles</span>
-              <ArrowRight size={20} />
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
-      <motion.section
-        className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-3xl lg:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Ready to Experience the Future of Mobility?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-green-100 dark:text-green-200 mb-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Join our community and be the first to know about our latest innovations and
-            product launches.
-          </motion.p>
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-            <Link
-              to="/about"
-              className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
-            >
-              <span>Get in Touch</span>
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </div>
-      </motion.section>
-
+      </motion.section> */}
       {/* ────────────────────────────────────── PARTNERS (LAST SECTION) ────────────────────────────────────── */}
       <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -396,6 +271,132 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      {/* ──────────────────────── WE ARE HIRING SECTION (MOVED HERE) ──────────────────────── */}
+      <motion.section
+        className="py-20 bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="text-4xl lg:text-5xl font-bold text-green-800 dark:text-green-300 mb-6"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            WE ARE HIRING
+          </motion.h2>
+
+          <motion.p
+            className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            Our projects combine mechanical innovation, smart control systems, and human-centered design to redefine what mobility assistance can achieve. We are a mission-driven team looking for like-minded passionate <strong>Mechanical Engineers</strong> and <strong>Industrial Designers</strong> to join us and innovate for India.
+          </motion.p>
+
+          <motion.div
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Link
+              to="/careers"
+              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold text-lg shadow-lg"
+            >
+              <span>Explore Open Roles</span>
+              <ArrowRight size={20} />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
+      <motion.section
+        className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h2
+            className="text-3xl lg:text-4xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Ready to Experience the Future of Mobility?
+          </motion.h2>
+          <motion.p
+            className="text-xl text-green-100 dark:text-green-200 mb-8 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            Join our community and be the first to know about our latest innovations and
+            product launches.
+          </motion.p>
+          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+            <Link
+              to="/about"
+              className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
+            >
+              <span>Get in Touch</span>
+              <ArrowRight size={18} />
+            </Link>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      
+      {/* ────────────────────────────────────── FEATURES ────────────────────────────────────── */}
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Why Choose Grace.ev?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with compassionate design to create mobility
+              solutions that truly make a difference.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
+                <div className="mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

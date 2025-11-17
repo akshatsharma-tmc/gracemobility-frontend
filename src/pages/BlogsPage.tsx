@@ -141,7 +141,7 @@ const BlogsPage: React.FC = () => {
               {!isAuthenticated && (
                 <motion.button
                   onClick={() => setShowAuth(true)}
-                  className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium flex items-center space-x-2"
+                  className="bg-green-600 text-white px-3 py-1 md:px-4 md:py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 font-medium flex items-center space-x-2 text-sm md:text-base"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -150,7 +150,7 @@ const BlogsPage: React.FC = () => {
                 </motion.button>
               )}
             </div>
-            <div className="text-center">
+            <div className="text-center pt-10 md:pt-0">
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 Grace.ev <span className="text-green-600">Blog</span>
               </h1>

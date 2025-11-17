@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { BlogProvider } from './contexts/BlogContext';
@@ -10,6 +9,7 @@ import ProductsPage from './pages/ProductsPage';
 import CareersPage from './pages/CareersPage';
 import BlogsPage from './pages/BlogsPage';
 import UnsubscribePage from './pages/UnsubscribePage';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -29,6 +29,9 @@ function App() {
               </Routes>
             </main>
             <Footer />
+            
+            {/* Chatbot available on all pages */}
+            <Chatbot />
           </div>
         </Router>
       </BlogProvider>

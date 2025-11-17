@@ -84,12 +84,15 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Button – subtle bounce every 10 seconds */}
       {!isOpen && (
         <div className="fixed bottom-6 right-6 z-[9999] group">
           <button
             onClick={() => setIsOpen(true)}
-            className="flex items-center gap-3 bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 hover:from-green-700 hover:to-green-800 dark:hover:from-green-800 dark:hover:to-green-900 text-white px-5 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 animate-bounce"
+            className="flex items-center gap-3 bg-gradient-to-r from-green-600 to-green-700 dark:from-green-700 dark:to-green-800 hover:from-green-700 hover:to-green-800 dark:hover:from-green-800 dark:hover:to-green-900 text-white px-5 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105"
+            style={{
+              animation: 'subtleBounce 10s infinite'
+            }}
             aria-label="Chat with us"
           >
             <img
@@ -98,7 +101,7 @@ const Chatbot = () => {
               className="h-8 w-8 rounded-full bg-white p-1"
             />
             <span className="font-medium text-sm">Chat with us</span>
-            <MessageCircle size={20} className="animate-pulse" />
+            <MessageCircle size={20} />
           </button>
         </div>
       )}
@@ -199,6 +202,24 @@ const Chatbot = () => {
           </div>
         </div>
       )}
+
+      {/* Subtle bounce every 10 seconds */}
+      <style>{`
+        @keyframes subtleBounce {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          5% {
+            transform: translateY(-8px);
+          }
+          10%, 90% {
+            transform: translateY(0);
+          }
+          95% {
+            transform: translateY(-4px);
+          }
+        }
+      `}</style>
     </>
   );
 };

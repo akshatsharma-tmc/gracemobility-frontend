@@ -114,99 +114,124 @@ const HomePage = () => {
       {/* ────────────────────────────────────── PARTNERS (UPDATED) ────────────────────────────────────── */}
       <motion.section
         style={{ marginTop: partnersOffset }}
-        className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+        className="py-24 bg-white dark:bg-gray-900 transition-colors duration-300 border-t border-gray-200 dark:border-gray-700"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Partners
+            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4 tracking-tight">
+              Our Trusted Partners
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We collaborate with leading institutions and organizations to drive innovation in assistive technology.
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              These world-class institutions collaborate with us to push boundaries in assistive technology,
+              clinical research, and engineering excellence.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Partner 1 */}
             <motion.div
-              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-700 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all text-center"
+              className="relative rounded-2xl p-8 shadow-xl bg-gradient-to-br from-green-50 to-green-100 
+                   dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-600 
+                   hover:shadow-2xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ y: -6 }}
             >
-              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-xl flex items-center justify-center shadow-md p-2">
+              {/* subtle glowing border */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              {/* logo spotlight */}
+              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-2xl flex items-center justify-center shadow-md p-3">
                 <img
                   src="/St Johns logo.png"
                   alt="St Johns Research Institute"
                   className="w-full h-full object-contain"
                 />
               </div>
+
               <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
                 St Johns Research Institute
               </h3>
+
               <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                A premier research institute in Bengaluru, collaborating with us on clinical validation, user studies, and medical-grade safety standards for assistive devices.
+                A premier centre in Bengaluru collaborating with us on clinical validation, user studies,
+                and medical-grade safety for next-generation assistive devices.
               </p>
             </motion.div>
 
             {/* Partner 2 */}
             <motion.div
-              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-700 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all text-center"
+              className="relative rounded-2xl p-8 shadow-xl bg-gradient-to-br from-green-50 to-green-100 
+                   dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-600 
+                   hover:shadow-2xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ y: -6 }}
             >
-              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-xl flex items-center justify-center shadow-md p-2">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-2xl flex items-center justify-center shadow-md p-3">
                 <img
                   src="/Takumi-Motion-Controls-Logo.png"
                   alt="Takumi Motion Controls"
                   className="w-full h-full object-contain"
                 />
               </div>
+
               <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
                 Takumi Motion Controls
               </h3>
+
               <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                Our technology partner for precision motors, embedded systems, and motion control algorithms — enabling smooth, reliable, and efficient mobility solutions.
+                Our engineering partner for precision motors, embedded systems, and motion control,
+                ensuring smooth, reliable and safe mobility.
               </p>
             </motion.div>
 
             {/* Partner 3 */}
             <motion.div
-              className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-700 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all text-center"
+              className="relative rounded-2xl p-8 shadow-xl bg-gradient-to-br from-green-50 to-green-100 
+                   dark:from-gray-800 dark:to-gray-700 border border-green-200/40 dark:border-gray-600 
+                   hover:shadow-2xl transition-all duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ y: -6 }}
             >
-              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-xl flex items-center justify-center shadow-md p-2">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-green-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+              <div className="w-32 h-32 mx-auto mb-6 bg-white dark:bg-white rounded-2xl flex items-center justify-center shadow-md p-3">
                 <img
                   src="/EnableIndia.png"
                   alt="Enable India"
                   className="w-full h-full object-contain"
                 />
               </div>
+
               <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-3">
                 Enable India
               </h3>
+
               <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                A pioneer in disability inclusion and the Purple Economy — guiding our design philosophy to ensure our products are accessible, inclusive, and empowering.
+                A pioneer in disability inclusion guiding our accessibility and human-centered design
+                principles to create meaningful, empowering solutions.
               </p>
             </motion.div>
           </div>
         </div>
       </motion.section>
+
 
       {/* ──────────────────────── WE ARE HIRING SECTION ──────────────────────── */}
       <motion.section

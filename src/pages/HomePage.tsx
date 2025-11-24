@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HomePage = () => {
-  // Reduced parallax intensity to avoid huge gap
   const { scrollY } = useScroll();
-  const parallaxY = useTransform(scrollY, [0, 500], [0, -80]); // was -150 → now -80
+  const parallaxY = useTransform(scrollY, [0, 500], [0, -80]);
 
-  // Scroll to top on page reload
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -111,11 +109,11 @@ const HomePage = () => {
       </motion.section>
 
       {/* ────────────────────────────────────── PARTNERS (LAST SECTION) ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 -mt-32 relative z-10">
-        {/* Decorative top accent */}
-        <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-green-500 to-green-600" />
+      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative -mt-32 pt-32">
+        {/* Green accent line — now properly clipped and only visible inside this section */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-80" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -134,19 +132,19 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Partner 1: St Johns */}
             <motion.div
-              className="group relative bg-gradient-to-br from-green-50/80 to-green-100/80 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-3"
-              initial={{ opacity: 0, y: 40 }}
+              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
             >
               <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-36 h-36 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-4 flex items-center justify-center">
+                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
                   <img
                     src="/St Johns logo.png"
                     alt="St Johns Research Institute"
-                    className="w-full h-full object-contain rounded-lg"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
@@ -160,19 +158,19 @@ const HomePage = () => {
 
             {/* Partner 2: Takumi Motion Controls */}
             <motion.div
-              className="group relative bg-gradient-to-br from-green-50/80 to-green-100/80 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-3"
-              initial={{ opacity: 0, y: 40 }}
+              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-36 h-36 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-2xl shadow-lg p-4 flex items-center justify-center">
+                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
                   <img
                     src="/Takumi-Motion-Controls-Logo.png"
                     alt="Takumi Motion Controls"
-                    className="w-full h-full object-contain rounded-lg"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
@@ -186,19 +184,19 @@ const HomePage = () => {
 
             {/* Partner 3: Enable India */}
             <motion.div
-              className="group relative bg-gradient-to-br from-green-50/80 to-green-100/80 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-3"
-              initial={{ opacity: 0, y: 40 }}
+              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.3 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
             >
               <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-36 h-36 mx-auto mb-6 bg-white dark:bg-gray-900 rounded-o-2xl shadow-lg p-4 flex items-center justify-center">
+                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
                   <img
                     src="/EnableIndia.png"
                     alt="Enable India"
-                    className="w-full h-full object-contain rounded-lg"
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
@@ -337,7 +335,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };

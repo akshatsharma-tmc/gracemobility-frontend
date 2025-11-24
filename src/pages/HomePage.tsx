@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, Shield, Zap, Users, Star } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const HomePage = () => {
   const { scrollY } = useScroll();
-  const parallaxY = useTransform(scrollY, [0, 500], [0, -80]);
+  // Gentle parallax that doesn't break full-height hero
+  const parallaxY = useTransform(scrollY, [0, 600], [0, -100]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -33,72 +34,78 @@ const HomePage = () => {
   ];
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* ────────────────────────────────────── HERO ────────────────────────────────────── */}
       <motion.section
-        className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 min-h-screen flex items-center transition-colors duration-300 relative overflow-hidden"
+        className="relative bg-gradient-to-br from-green-50 via-green-100 to-emerald-100 
+                   dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 
+                   min-h-screen flex items-center justify-center"
         style={{ y: parallaxY }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1.2 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-green-200/30 to-green-300/30 dark:from-gray-700/30 dark:to-gray-600/30" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Subtle background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent dark:from-black/40" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -80 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.9, delay: 0.2 }}
+              className="space-y-8"
             >
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-6">
-                Empowering
-                <span className="text-green-600 dark:text-green-400"> Independence</span> Through
-                Innovation
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                Empowering<br />
+                <span className="text-green-600 dark:text-green-400">Independence</span><br />
+                Through Innovation
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+              <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl leading-relaxed">
                 Grace.ev creates advanced assistive technology to support people with mobility
                 challenges, helping them live more independent and fulfilling lives.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-6 pt-6">
                 <Link
                   to="/products"
-                  className="bg-green-600 dark:bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-700 dark:hover:bg-green-600 transition-colors duration-200 font-semibold text-center"
+                  className="bg-green-600 hover:bg-green-700 text-white px-9 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3"
                 >
-                  Explore Products
+                  Explore Products <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   to="/about"
-                  className="border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400 px-8 py-3 rounded-lg hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors duration-200 font-semibold text-center"
+                  className="border-2 border-green-600 dark:border-green-400 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-900/30 px-9 py-4 rounded-xl font-bold text-lg transition-all duration-300 text-center"
                 >
                   Learn More
                 </Link>
               </div>
             </motion.div>
 
+            {/* Right Card */}
             <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 80 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.9, delay: 0.4 }}
+              className="flex justify-center"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 transition-colors duration-300 text-center">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl rounded-3xl shadow-2xl p-10 max-w-md border border-green-100 dark:border-green-800">
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-5 text-center">
                   Innovation in Progress
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-6">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8 text-center">
                   We're developing revolutionary assistive technology that will transform lives.
                   Our team is working tirelessly to bring you products that enhance independence
                   and mobility.
                 </p>
                 <motion.div
-                  className="bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-700 rounded-lg p-4"
                   whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+                  className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/50 dark:to-emerald-900/50 border-2 border-green-200 dark:border-green-700 rounded-2xl p-6 text-center"
                 >
-                  <p className="text-green-800 dark:text-green-300 font-semibold">
+                  <p className="text-2xl font-bold text-green-800 dark:text-green-300">
                     Coming Soon
                   </p>
-                  <p className="text-green-700 dark:text-green-400 text-sm mt-1">
+                  <p className="text-green-700 dark:text-green-400 mt-2">
                     Stay tuned for exciting updates!
                   </p>
                 </motion.div>
@@ -108,228 +115,156 @@ const HomePage = () => {
         </div>
       </motion.section>
 
-      {/* ────────────────────────────────────── PARTNERS (LAST SECTION) ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 relative -mt-32 pt-32">
-        {/* Green accent line — now properly clipped and only visible inside this section */}
-        <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-80" />
+      {/* ────────────────────────────────────── PARTNERS – NOW MUCH MORE ATTRACTIVE ────────────────────────────────────── */}
+      <section className="py-28 bg-gradient-to-b from-white via-green-50/50 to-white dark:from-gray-900 dark:via-gray-800/50 dark:to-gray-900 relative">
+        {/* Decorative wave top */}
+        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-green-100/30 to-transparent dark:from-green-900/20" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Our <span className="text-green-600 dark:text-green-400">Partners</span>
+            <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600">Partners</span>
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We collaborate with leading institutions and organizations to drive innovation in assistive technology.
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              We collaborate with world-class institutions and organizations to pioneer the future of assistive mobility.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Partner 1: St Johns */}
-            <motion.div
-              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
-                  <img
-                    src="/St Johns logo.png"
-                    alt="St Johns Research Institute"
-                    className="w-full h-full object-contain"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Partner Cards */}
+            {[
+              { name: "St Johns Research Institute", img: "/St Johns logo.png", desc: "Clinical validation, user studies, and medical-grade safety standards." },
+              { name: "Takumi Motion Controls", img: "/Takumi-Motion-Controls-Logo.png", desc: "Precision motors, embedded systems, and advanced motion control algorithms." },
+              { name: "Enable India", img: "/EnableIndia.png", desc: "Pioneers in disability inclusion guiding our human-centered design philosophy." }
+            ].map((partner, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-emerald-400/20 rounded-3xl blur-3xl scale-0 group-hover:scale-100 transition-transform duration-700" />
+                
+                <div className="relative bg-white dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-600 transition-all duration-500 hover:-translate-y-6 hover:shadow-3xl">
+                  <div className="w-48 h-48 mx-auto mb-8 bg-white dark:bg-gray-900 rounded-3xl shadow-2xl ring-8 ring-green-50 dark:ring-gray-800 p-8 flex items-center justify-center">
+                    <img
+                      src={partner.img}
+                      alt={partner.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                    {partner.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 text-center leading-relaxed">
+                    {partner.desc}
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
-                  St Johns Research Institute
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  A premier research institute in Bengaluru, collaborating with us on clinical validation, user studies, and medical-grade safety standards for assistive devices.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Partner 2: Takumi Motion Controls */}
-            <motion.div
-              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
-                  <img
-                    src="/Takumi-Motion-Controls-Logo.png"
-                    alt="Takumi Motion Controls"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
-                  Takumi Motion Controls
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  Our technology partner for precision motors, embedded systems, and motion control algorithms — enabling smooth, reliable, and efficient mobility solutions.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Partner 3: Enable India */}
-            <motion.div
-              className="group relative bg-gradient-to-br from-green-50/90 to-green-100/90 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-xl text-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-4"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <div className="absolute inset-0 bg-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
-              <div className="relative">
-                <div className="w-40 h-40 mx-auto mb-6 bg-white rounded-2xl shadow-xl p-5 ring-4 ring-green-100 dark:ring-gray-700 flex items-center justify-center">
-                  <img
-                    src="/EnableIndia.png"
-                    alt="Enable India"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-3">
-                  Enable India
-                </h3>
-                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-                  A pioneer in disability inclusion and the Purple Economy — guiding our design philosophy to ensure our products are accessible, inclusive, and empowering.
-                </p>
-              </div>
-            </motion.div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ──────────────────────── WE ARE HIRING SECTION (MOVED HERE) ──────────────────────── */}
+      {/* ──────────────────────── WE ARE HIRING SECTION ──────────────────────── */}
       <motion.section
-        className="py-20 bg-gradient-to-r from-green-50 to-green-100 dark:from-gray-800 dark:to-gray-700 transition-colors duration-300"
+        className="py-28 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-700"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
+        transition={{ duration: 0.9 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-green-800 dark:text-green-300 mb-6"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <motion.h2 className="text-5xl lg:text-6xl font-extrabold text-green-800 dark:text-green-300 mb-8">
             WE ARE HIRING
           </motion.h2>
-
-          <motion.p
-            className="text-lg lg:text-xl text-gray-700 dark:text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
-            Our projects combine mechanical innovation, smart control systems, and human-centered design to redefine what mobility assistance can achieve. We are a mission-driven team looking for like-minded passionate <strong>Mechanical Engineers</strong> and <strong>Industrial Designers</strong> to join us and innovate for India.
+          <motion.p className="text-xl text-gray-700 dark:text-gray-300 mb-12 max-w-5xl mx-auto leading-relaxed">
+            Our projects combine mechanical innovation, smart control systems, and human-centered design to redefine what mobility assistance can achieve. We are a mission-driven team looking for passionate <strong>Mechanical Engineers</strong> and <strong>Industrial Designers</strong> to join us and innovate for India.
           </motion.p>
-
-          <motion.div
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.3 }}
-          >
+          <motion.div whileHover={{ scale: 1.08 }} whileTap={{ scale: 0.98 }}>
             <Link
               to="/careers"
-              className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-300 font-semibold text-lg shadow-lg"
+              className="inline-flex items-center gap-4 bg-green-600 hover:bg-green-700 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl transition-all duration-300"
             >
-              <span>Explore Open Roles</span>
-              <ArrowRight size={20} />
+              Explore Open Roles <ArrowRight className="w-6 h-6" />
             </Link>
           </motion.div>
         </div>
       </motion.section>
 
       {/* ────────────────────────────────────── CTA ────────────────────────────────────── */}
-      <motion.section
-        className="py-20 bg-green-600 dark:bg-green-700 transition-colors duration-300"
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <motion.section className="py-28 bg-green-600 dark:bg-green-700">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
           <motion.h2
-            className="text-3xl lg:text-4xl font-bold text-white mb-6"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-4xl lg:text-6xl font-extrabold mb-8"
           >
             Ready to Experience the Future of Mobility?
           </motion.h2>
           <motion.p
-            className="text-xl text-green-100 dark:text-green-200 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl lg:text-2xl text-green-100 mb-12 max-w-3xl mx-auto"
           >
-            Join our community and be the first to know about our latest innovations and
-            product launches.
+            Join our community and be the first to know about our latest innovations.
           </motion.p>
-          <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
+          <motion.div whileHover={{ scale: 1.1 }}>
             <Link
               to="/about"
-              className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-200 font-semibold"
+              className="inline-flex items-center gap-3 bg-white text-green-600 px-10 py-5 rounded-xl font-bold text-xl hover:bg-gray-100 transition-all duration-300 shadow-xl"
             >
-              <span>Get in Touch</span>
-              <ArrowRight size={18} />
+              Get in Touch <ArrowRight className="w-6 h-6" />
             </Link>
           </motion.div>
         </div>
       </motion.section>
 
       {/* ────────────────────────────────────── FEATURES ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-28 bg-white dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            <h2 className="text-5xl font-extrabold text-gray-900 dark:text-white mb-6">
               Why Choose Grace.ev?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We combine cutting-edge technology with compassionate design to create mobility
-              solutions that truly make a difference.
+            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              We combine cutting-edge technology with compassionate design to create mobility solutions that truly make a difference.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {features.map((feature, i) => (
               <motion.div
-                key={index}
-                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
+                key={i}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ delay: i * 0.15 }}
+                className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3"
               >
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                <div className="mb-6">{feature.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>

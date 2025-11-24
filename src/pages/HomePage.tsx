@@ -6,6 +6,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const HomePage = () => {
   const { scrollY } = useScroll();
   const parallaxY = useTransform(scrollY, [0, 500], [0, -150]);
+  const partnersOffset = useTransform(scrollY, [0, 300], [-40, -140]);
+
 
   // Scroll to top on page reload
   useEffect(() => {
@@ -110,7 +112,10 @@ const HomePage = () => {
       </motion.section>
 
       {/* ────────────────────────────────────── PARTNERS (UPDATED) ────────────────────────────────────── */}
-      <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300 -mt-12">
+      <motion.section
+        style={{ marginTop: partnersOffset }}
+        className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -201,7 +206,7 @@ const HomePage = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* ──────────────────────── WE ARE HIRING SECTION ──────────────────────── */}
       <motion.section
